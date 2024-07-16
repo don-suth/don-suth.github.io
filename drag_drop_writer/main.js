@@ -14,6 +14,7 @@ function createLetter(letter) {
 function initialise() {
     let alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
     alphabet.forEach(createLetter);
+    document.getElementById("feedback").innerText = "";
 }
 
 document.addEventListener("DOMContentLoaded", initialise);

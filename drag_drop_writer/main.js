@@ -15,3 +15,5 @@ function initialise() {
     let alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
     alphabet.forEach(createLetter);
 }
+
+document.addEventListener("DOMContentLoaded", initialise);

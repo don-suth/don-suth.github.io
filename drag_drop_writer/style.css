@@ -1,8 +1,9 @@
 #canvas_container {
-    left: 5px;
-    right: 5px;
-    top: 5px;
-    bottom: 20px;
+    position: fixed;
+    left: 20px;
+    right: 20px;
+    top: 20px;
+    bottom: 60px;
 }
 
 #canvas {

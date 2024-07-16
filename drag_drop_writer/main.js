@@ -30,10 +30,10 @@ function dropElement(event) {
     });
 }
 
-function createLetter(letter, container_id) {
+function createLetter(letter, classname, container_id) {
     let mySpan = document.createElement("span")
     mySpan.draggable = true;
-    mySpan.className = "draggable_text";
+    mySpan.className = classname;
     mySpan.innerText = letter;
     mySpan.addEventListener("dragstart", dragElement);
     document.getElementById(container_id).appendChild(mySpan);
@@ -47,10 +47,10 @@ function downloadImage() {
 }
 
 function initialise() {
-    let alphabet = 'abcdefghijklmnopqrstuvwxyz.?!'.split('');
-    alphabet.forEach(function (letter) { createLetter(letter, "lowercase_container")});
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    alphabet.forEach(function (letter) { createLetter(letter, "draggable_text", "lowercase_container")});
     alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
-    alphabet.forEach(function (letter) { createLetter(letter, "uppercase_container")});
+    alphabet.forEach(function (letter) { createLetter(letter, "draggable_text","uppercase_container")});
 
     //document.getElementById("feedback").innerText = "";
     canvas = new fabric.Canvas("canvas", {
@@ -59,8 +59,12 @@ function initialise() {
     });
     let downloadButton = document.createElement("button");
     downloadButton.innerText = "Save";
+    downloadButton.id = "download_button";
     downloadButton.addEventListener("click", downloadImage);
-    document.getElementById("bottom_toolbar").appendChild(downloadButton);
+    document.getElementById("lowercase_container").appendChild(downloadButton);
+
+    alphabet = ".?!".split('');
+    alphabet.forEach(function (letter) { createLetter(letter, "draggable_text punctuation","lowercase_container")});
 }
 
 document.addEventListener("DOMContentLoaded", initialise);

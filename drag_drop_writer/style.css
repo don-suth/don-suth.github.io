@@ -22,6 +22,10 @@
     margin-right: 2px;
 }
 
+.punctuation {
+    float: right;
+}
+
 #lowercase_container {
     max-width: 100%;
     overflow-wrap: anywhere;
@@ -47,4 +51,17 @@
     right: 0;
     padding-left: 3px;
     padding-right: 3px;
+}
+
+#download_button {
+    float: right;
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    font-family: stickandball;
+    font-size: 1.5em;
+    text-align: center;
+    display: inline-block;
+    height: 3em;
+    margin-left: 10px;
 }

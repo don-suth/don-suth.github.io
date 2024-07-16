@@ -7,6 +7,7 @@ function dragElement(event) {
 
 function allowDrop(event) {
     event.preventDefault();
+    console.log("Allowed!");
 }
 
 function dropElement(event) {

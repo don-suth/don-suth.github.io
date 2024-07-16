@@ -29,13 +29,13 @@ function dropElement(event) {
     });
 }
 
-function createLetter(letter) {
+function createLetter(letter, container_id) {
     let mySpan = document.createElement("span")
     mySpan.draggable = true;
     mySpan.className = "draggable_text";
     mySpan.innerText = letter;
     mySpan.addEventListener("dragstart", dragElement);
-    document.getElementById("text_container").appendChild(mySpan);
+    document.getElementById(container_id).appendChild(mySpan);
 }
 
 function downloadImage() {
@@ -46,8 +46,11 @@ function downloadImage() {
 }
 
 function initialise() {
-    let alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-    alphabet.forEach(createLetter);
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz.?!'.split('');
+    alphabet.forEach(function (letter) { createLetter(letter, "lowercase_container")});
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+    alphabet.forEach(function (letter) { createLetter(letter, "uppercase_container")});
+
     //document.getElementById("feedback").innerText = "";
     canvas = new fabric.Canvas("canvas", {
         selection: false,

@@ -35,6 +35,9 @@ function createLetter(letter, classname, container_id) {
     mySpan.draggable = true;
     mySpan.className = classname;
     mySpan.innerText = letter;
+    if ("aeiouAEIOU".includes(letter)) {
+        mySpan.style.color = "rgb(255,21,21)"
+    }
     mySpan.addEventListener("dragstart", dragElement);
     document.getElementById(container_id).appendChild(mySpan);
 }

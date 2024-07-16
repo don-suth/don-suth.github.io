@@ -38,6 +38,13 @@ function createLetter(letter) {
     document.getElementById("text_container").appendChild(mySpan);
 }
 
+function downloadImage() {
+    let link = document.createElement("a");
+    link.download = "text_writer.png"
+    link.href = document.getElementById("canvas").toDataURL("image/png");
+    link.click();
+}
+
 function initialise() {
     let alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
     alphabet.forEach(createLetter);

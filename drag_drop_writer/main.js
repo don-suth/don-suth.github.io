@@ -50,7 +50,8 @@ function initialise() {
     alphabet.forEach(createLetter);
     //document.getElementById("feedback").innerText = "";
     canvas = new fabric.Canvas("canvas", {
-        selection: false
+        selection: false,
+        backgroundColor: "rgba(255,255,255,1)"
     });
     document.getElementById("download").addEventListener("click", downloadImage);
 }

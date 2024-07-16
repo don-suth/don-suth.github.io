@@ -13,6 +13,11 @@
     font-size: 60px;
 }
 
+#text_container {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
 #feedback {
     font-size: 60px;
 }

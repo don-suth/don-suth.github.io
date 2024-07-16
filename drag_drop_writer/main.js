@@ -11,7 +11,7 @@ function createLetter(letter) {
     document.getElementById("text_container").appendChild(mySpan);
 }
 
-window.onload = function() {
-    let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+function initialise() {
+    let alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
     alphabet.forEach(createLetter);
 }

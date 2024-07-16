@@ -32,3 +32,13 @@
 #feedback {
     font-size: 60px;
 }
+
+#bottom_toolbar {
+    border-top: 1px solid black;
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-left: 3px;
+    padding-right: 3px;
+}

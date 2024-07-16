@@ -56,7 +56,10 @@ function initialise() {
         selection: false,
         backgroundColor: "rgba(255,255,255,1)"
     });
-    document.getElementById("download").addEventListener("click", downloadImage);
+    let downloadButton = document.createElement("button");
+    downloadButton.innerText = "Save";
+    downloadButton.addEventListener("click", downloadImage);
+    document.getElementById("bottom_toolbar").appendChild(downloadButton);
 }
 
 document.addEventListener("DOMContentLoaded", initialise);

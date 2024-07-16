@@ -52,6 +52,7 @@ function initialise() {
     canvas = new fabric.Canvas("canvas", {
         selection: false
     });
+    document.getElementById("download").addEventListener("click", downloadImage);
 }
 
 document.addEventListener("DOMContentLoaded", initialise);

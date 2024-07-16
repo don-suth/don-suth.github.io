@@ -4,7 +4,7 @@ function dragElement(event) {
     event.dataTransfer.setData("char", event.target.innerText);
     event.dataTransfer.setData("x_offset", event.layerX);
     event.dataTransfer.setData("y_offset", event.layerY);
-    document.getElementById("feedback").innerText = event.dataTransfer.getData("char");
+    //document.getElementById("feedback").innerText = event.dataTransfer.getData("char");
     document.querySelectorAll("canvas").forEach(function (element) {
        element.style.zIndex = "-1";
     });
@@ -23,7 +23,7 @@ function dropElement(event) {
     newChar.set("left", event.layerX - event.dataTransfer.getData("x_offset"));
     newChar.set("top", event.layerY - event.dataTransfer.getData("y_offset"));
     canvas.add(newChar);
-    document.getElementById("feedback").innerText = "Dropped " + event.dataTransfer.getData("char");
+    //document.getElementById("feedback").innerText = "Dropped " + event.dataTransfer.getData("char");
     document.querySelectorAll("canvas").forEach(function (element) {
        element.style.zIndex = "0";
     });
@@ -41,7 +41,7 @@ function createLetter(letter) {
 function initialise() {
     let alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
     alphabet.forEach(createLetter);
-    document.getElementById("feedback").innerText = "";
+    //document.getElementById("feedback").innerText = "";
     canvas = new fabric.Canvas("canvas", {
         selection: false
     });

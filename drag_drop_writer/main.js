@@ -18,7 +18,8 @@ function dropElement(event) {
     event.preventDefault();
     let newChar = new fabric.Text(event.dataTransfer.getData("char"), {
         hasControls: false,
-        fontSize: fabric.util.parseUnit("3em")
+        fontSize: fabric.util.parseUnit("3em"),
+        fontFamily: "stickandball"
     });
     newChar.set("left", event.layerX - event.dataTransfer.getData("x_offset"));
     newChar.set("top", event.layerY - event.dataTransfer.getData("y_offset"));

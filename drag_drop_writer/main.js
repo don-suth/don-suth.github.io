@@ -53,10 +53,7 @@ function initialise() {
     alphabet.forEach(function (letter) { createLetter(letter, "draggable_text","uppercase_container")});
 
     //document.getElementById("feedback").innerText = "";
-    canvas = new fabric.Canvas("canvas", {
-        selection: false,
-        backgroundColor: "rgba(255,255,255,1)"
-    });
+
     let downloadButton = document.createElement("button");
     downloadButton.innerText = "Save";
     downloadButton.id = "download_button";
@@ -65,6 +62,20 @@ function initialise() {
 
     alphabet = ".?!".split('');
     alphabet.forEach(function (letter) { createLetter(letter, "draggable_text punctuation","lowercase_container")});
+
+    let client_width = document.documentElement.clientWidth;
+    let client_height = document.documentElement.clientHeight;
+
+    let canvas_element = document.getElementById("canvas");
+    let toolbar_element = document.getElementById("bottom_toolbar");
+
+    canvas_element.height = client_height - toolbar_element.offsetHeight - 16;
+    canvas_element.width = client_width - 16;
+
+    canvas = new fabric.Canvas("canvas", {
+        selection: false,
+        backgroundColor: "rgba(255,255,255,1)"
+    });
 }
 
 document.addEventListener("DOMContentLoaded", initialise);

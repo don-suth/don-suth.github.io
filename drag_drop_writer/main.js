@@ -63,7 +63,7 @@ function initialise() {
     downloadButton.addEventListener("click", downloadImage);
     document.getElementById("lowercase_container").appendChild(downloadButton);
 
-    alphabet = ".?!".split('');
+    alphabet = ".?!,".split('');
     alphabet.forEach(function (letter) { createLetter(letter, "draggable_text punctuation","lowercase_container")});
 
     let client_width = document.documentElement.clientWidth;

@@ -2,6 +2,8 @@ let canvas;
 
 function dragElement(event) {
     event.dataTransfer.setData("char", event.target.innerText);
+    event.dataTransfer.setData("x_offset", event.layerX);
+    event.dataTransfer.setData("y_offset", event.layerY);
     document.getElementById("feedback").innerText = event.dataTransfer.getData("char");
     document.querySelectorAll("canvas").forEach(function (element) {
        element.style.zIndex = "-1";
@@ -10,16 +12,16 @@ function dragElement(event) {
 
 function allowDrop(event) {
     event.preventDefault();
-    console.log("Allowed!");
 }
 
 function dropElement(event) {
     event.preventDefault();
     let newChar = new fabric.Text(event.dataTransfer.getData("char"), {
         hasControls: false,
+        fontSize: 60
     });
-    newChar.set("left", event.layerX - (newChar.get("width") / 2));
-    newChar.set("top", event.layerY - (newChar.get("height") / 2));
+    newChar.set("left", event.layerX - event.dataTransfer.getData("x_offset"));
+    newChar.set("top", event.layerY - event.dataTransfer.getData("y_offset"));
     canvas.add(newChar);
     document.getElementById("feedback").innerText = "Dropped " + event.dataTransfer.getData("char");
     document.querySelectorAll("canvas").forEach(function (element) {
@@ -40,7 +42,9 @@ function initialise() {
     let alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
     alphabet.forEach(createLetter);
     document.getElementById("feedback").innerText = "";
-    canvas = new fabric.Canvas(document.getElementById("canvas"));
+    canvas = new fabric.Canvas("canvas", {
+        selection: false
+    });
 }
 
 document.addEventListener("DOMContentLoaded", initialise);

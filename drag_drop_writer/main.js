@@ -11,6 +11,11 @@ function allowDrop(event) {
 
 function dropElement(event) {
     event.preventDefault();
+    let newChar = new fabric.Text(event.dataTransfer.getData("char"), {
+        left: event.layerX,
+        top: event.layerY,
+    });
+    canvas.add(newChar);
     document.getElementById("feedback").innerText = "Dropped " + event.dataTransfer.getData("char");
 
 }

@@ -16,7 +16,14 @@
     margin-right: 2px;
 }
 
-#text_container {
+#lowercase_container {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    user-select: none;
+    margin-bottom: -1em;
+}
+
+#uppercase_container {
     max-width: 100%;
     overflow-wrap: anywhere;
     user-select: none;

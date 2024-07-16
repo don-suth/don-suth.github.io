@@ -76,6 +76,17 @@ function initialise() {
         selection: false,
         backgroundColor: "rgba(255,255,255,1)"
     });
+
+    let font_size_in_pixels = fabric.util.parseUnit("3em");
+    for ( let i = font_size_in_pixels; i < client_height - toolbar_element.offsetHeight; i += font_size_in_pixels) {
+        canvas.add(new fabric.Line(
+            [0, i, client_width, i],
+            {
+                selectable: false,
+                stroke: "rgba(0,0,0,0.3)"
+            }
+        ))
+    }
 }
 
 document.addEventListener("DOMContentLoaded", initialise);

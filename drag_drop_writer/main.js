@@ -1,5 +1,18 @@
+let canvas;
+
 function dragElement(event) {
-    document.getElementById("feedback").innerText = event.target.innerText;
+    event.dataTransfer.setData("char", event.target.innerText);
+    document.getElementById("feedback").innerText = event.dataTransfer.getData("char");
+}
+
+function allowDrop(event) {
+    event.preventDefault();
+}
+
+function dropElement(event) {
+    event.preventDefault();
+    document.getElementById("feedback").innerText = "Dropped " + event.dataTransfer.getData("char");
+
 }
 
 function createLetter(letter) {
@@ -15,6 +28,7 @@ function initialise() {
     let alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
     alphabet.forEach(createLetter);
     document.getElementById("feedback").innerText = "";
+    canvas = new fabric.Canvas(document.getElementById("canvas"));
 }
 
 document.addEventListener("DOMContentLoaded", initialise);

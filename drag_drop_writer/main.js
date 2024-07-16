@@ -2,8 +2,8 @@ let canvas;
 
 function dragElement(event) {
     event.dataTransfer.setData("char", event.target.innerText);
-    event.dataTransfer.setData("x_offset", event.layerX);
-    event.dataTransfer.setData("y_offset", event.layerY);
+    event.dataTransfer.setData("x_offset", event.offsetX);
+    event.dataTransfer.setData("y_offset", event.offsetY);
     //document.getElementById("feedback").innerText = event.dataTransfer.getData("char");
     document.querySelectorAll("canvas").forEach(function (element) {
        element.style.zIndex = "-1";

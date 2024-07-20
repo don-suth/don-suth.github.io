@@ -15,9 +15,9 @@
 .draggable_text {
     font-family: stickandball;
     display: inline-block;
-    font-size: 3em;
-    margin-left: 2px;
-    margin-right: 2px;
+    font-size: 6em;
+    text-align: center;
+    min-width: 0.65em;
 }
 
 .punctuation {
@@ -28,7 +28,6 @@
     max-width: 100%;
     overflow-wrap: anywhere;
     user-select: none;
-    margin-bottom: -1em;
 }
 
 #uppercase_container {
@@ -57,7 +56,7 @@
     border: none;
     color: white;
     font-family: stickandball;
-    font-size: 1.5em;
+    font-size: 3em;
     text-align: center;
     display: inline-block;
     height: 2em;

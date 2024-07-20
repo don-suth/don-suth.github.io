@@ -18,7 +18,7 @@ function dropElement(event) {
     event.preventDefault();
     let newChar = new fabric.Text(event.dataTransfer.getData("char"), {
         hasControls: false,
-        fontSize: fabric.util.parseUnit("3em"),
+        fontSize: fabric.util.parseUnit("6em"),
         fontFamily: "stickandball"
     });
     newChar.set("left", event.layerX - event.dataTransfer.getData("x_offset"));
@@ -80,7 +80,7 @@ function initialise() {
         backgroundColor: "rgba(255,255,255,1)"
     });
 
-    let font_size_in_pixels = fabric.util.parseUnit("3em");
+    let font_size_in_pixels = fabric.util.parseUnit("6em");
     for ( let i = font_size_in_pixels; i < client_height - toolbar_element.offsetHeight; i += font_size_in_pixels) {
         canvas.add(new fabric.Line(
             [0, i, client_width, i],
